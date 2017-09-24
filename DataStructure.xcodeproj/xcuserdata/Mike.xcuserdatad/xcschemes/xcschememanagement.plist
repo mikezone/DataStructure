@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>动态查找_B-树、B+树.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>动态查找_B树BST.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -73,6 +78,11 @@
 			<true/>
 		</dict>
 		<key>275F83191F7760DA0054CDE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>275F83261F77C2A70054CDE3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
