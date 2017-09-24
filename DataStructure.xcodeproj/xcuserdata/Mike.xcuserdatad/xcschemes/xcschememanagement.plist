@@ -9,20 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>动态查找_B-树、B+树.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
-		</dict>
-		<key>动态查找_B树BST.xcscheme</key>
+		<key>动态查找①_B树BST.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-		<key>动态查找_平衡二叉树AVL树.xcscheme</key>
+		<key>动态查找②_平衡二叉树AVL树.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>10</integer>
+		</dict>
+		<key>动态查找③_B-树、B+树.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>希尔排序ShellSort.xcscheme</key>
 		<dict>
