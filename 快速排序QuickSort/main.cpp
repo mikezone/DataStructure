@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Mike. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#include <stdio.h>
 
 //void quickSort(int array[], int begin, int end) {
 //    if (end - begin <= 0) return;
@@ -131,12 +131,10 @@ void quickSort(int array[], int begin, int end) {
 
 
 int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        int arr[] = {10, 1, 3, 7, 4, 5};
-        quickSort(arr, 0, 5);
-        for (int i = 0; i < 6; i++) {
-            printf("%zd ", arr[i]);
-        }
+    int arr[] = {10, 1, 3, 7, 4, 5};
+    quickSort(arr, 0, 5);
+    for (int i = 0; i < 6; i++) {
+        printf("%zd ", arr[i]);
     }
     return 0;
 }
