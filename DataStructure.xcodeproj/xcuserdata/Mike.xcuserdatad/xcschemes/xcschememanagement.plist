@@ -19,15 +19,35 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>动态查找②_红黑树.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>动态查找③_B-树、B+树、B*树.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
+		<key>动态查找④_键树.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>堆排序HeapSort.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 		<key>希尔排序ShellSort.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>归并排序MergingSort.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 		<key>快速排序QuickSort.xcscheme</key>
 		<dict>
@@ -83,6 +103,26 @@
 			<true/>
 		</dict>
 		<key>275F83261F77C2A70054CDE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>276AA1D01F78C53F00D47235</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>276AA1DB1F78C58100D47235</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>276AA1E61F78CBAD00D47235</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>276AA1F11F78CBD500D47235</key>
 		<dict>
 			<key>primary</key>
 			<true/>
