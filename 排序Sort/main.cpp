@@ -14,10 +14,15 @@
 
 /**************************插入类排序*******************************/
 
-/// 直接插入排序
-/// 第i趟排序只操作原来数组中的前i+1个元素,每趟操作之后前i+1个元素有序
-/// 再继续，则将新取的第i+2个元素插入到前i+1个元素中，使之有序
-/// 时间复杂度为O(n^2)
+/**直接插入排序
+ * 从第一个元素开始，每趟增加一个参与排序的元素，在已经有序的序列中空出槽位，把新增的参与排序的元素放入这个槽位中，使之有序
+ *
+ * 具体的算法如下：
+ * 第i趟排序只操作原来数组中的前i+1个元素,每趟操作之后整个序列的前i+1个元素有序
+ * 再继续，则将新取的第i+2个元素插入到前i+1个元素中，使之有序
+ *
+ * 时间复杂度为O(n^2)
+ */
 void InsertSort(int array[], int length) {
     for (int i = 1; i < length; i++) {
         int support = array[i]; // 用辅助空间记录每一趟要插入的元素
@@ -69,46 +74,121 @@ void BinaryInsertSort(int array[], int length) {
 
 //sentinel
 
-/// 起泡排序 (交换排序算法中最简单的一种)
-void sort_bubble(int arr[], int length) {
-    for (int i = length - 1, change = true; i >= 1 && change; --i) {
-        change = false;
+/** 起泡排序 (交换排序算法中最简单的一种)
+ *
+ * 它的思路如下：
+ * 通过比较和移动，每一趟排序将未排序的序列中的最大值(最小值)放到最后，未排序的序列中元素个数变为 n - 1
+ * 继续进行前(n - 1)个元素的排序，一趟之后将这(n - 1)个元素中的最大值(最小值)放到这个序列的倒数第二个位置
+ *....
+ * 最后只剩下一个最小值(最大值)在序列的第一个位置
+ */
+
+/// 先冒泡最终的有序序列的低位
+void BubbleSortLowFirst(int array[], int length) {
+    /**
+     * 一趟之后: {最小值, x, x, x, x}
+     * 二趟之后: {最小值, 第二小值, x, x, x}
+     * ....
+     */
+    for (int i = 0, exchange = true; i < length - 1 && exchange; i++) {
+        exchange = false;
+        for (int j = i + 1; j < length; j++) {
+            if (array[j] < array[i]) {
+                int temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
+                exchange = true;
+            }
+        }
+    }
+}
+
+/// 先冒泡最终的有序序列的高位
+void BubbleSortHighFirst(int array[], int length) {
+    
+    /**
+     * 一趟之后: {x, x, x, x, 最大值}
+     * 二趟之后: {x, x, x, 第二大值, 最大值}
+     * ....
+     */
+    for (int i = length - 1, exchange = true; i >= 1 && exchange; --i) {
+        exchange = false;
         for (int j = 0; j < i; j++) {
-            if (arr[j+1] < arr[j]) {
-                int temp = arr[j+1];
-                arr[j+1] = arr[j];
-                arr[j] = temp;
-                change = true;
+            if (array[j+1] < array[j]) {
+                int temp = array[j+1];
+                array[j+1] = array[j];
+                array[j] = temp;
+                exchange = true;
             }
         }
     }
 }
 
 
-/// 简单选择排序 基本上不用   每趟的结果是找到未排序的集合中最小的, 要用到selectMin过程方法
-int selectMin(int arr[], int length, int startIndex);
+/***
+ 直接插入排序和起泡排序的比较：
+ 
+ 直接插入核心思想在于每趟使得有序序列的个数 + 1，操作的对象是序列
+而起泡排序的核心思想在于每趟拿去一个最大值(最小值)，这样使得无序序列的个数 - 1，它操作的对象是元素
+ 
+ 因为操作对象的不同，产生这样几个结果：
+ 直接插入排序使用空出槽位填充的方式给有序序列做增量，几乎不涉及元素的交换，只是移位的操作，若用链表实现序列，只需两次修改后继和前驱操作即可完成。
+ 起泡排序中为了每趟拿到想要的值，做大量的交换，内存操作是非常频繁的，即使使用链表实现序列，修改前驱和后记的操作也是相当频繁的。
+ 
+ *****/
 
-void sort_select(int arr[], int length) {
+
+
+/**
+ * 起泡排序的效率分析
+ 若初始序列为“正序”序列，则只需进行一趟排序(算法必须使用exchange标记)，在排序过程中进行n-1次比较，且不移动记录；
+ 反之，若初始序列为“逆序”序列，则需进行n-1趟排序，需进行(n-1) + (n-2)+..+1 = n(n-1)/2次比较，并做等数量级的移动。因此总的时间复杂度为O(n^2)。
+ */
+
+///////// 交换类高级算法:快速排序
+
+/**************************选择类排序*******************************/
+
+/**
+ 简单选择排序的思路是：每趟在待排序的序列中选出一个最小的，与待排序列中的第一个值交换，
+ 不断通过上面的比较、记录索引、交换操作，逐渐构建有序序列。
+ 
+ * 在这个过程中：
+ * i趟之后前i个序列有序
+ 
+ 与冒泡的不同是，冒泡是在不断的比较和交换，而选择排序是在不断地比较并记录位置，一趟只进行一次交换
+ */
+
+///  每趟的结果是找到未排序的集合中最小的, 要用到selectMin过程方法
+int SelectMin(int array[], int length, int start_index);
+
+void SelectSort(int array[], int length) {
     for (int i = 0; i < length; i++) {
-        int j = selectMin(arr, length, i);   // 从索引为i...length-1中找到最小的
+        int j = SelectMin(array, length, i);   // 从索引为i...length-1中找到最小的
         if (i != j) {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
     
 }
 // selectMin的一种实现
-int selectMin(int arr[], int length, int startIndex) {
-    int minIndex = startIndex;
-    for (int i = startIndex + 1; i < length; i++) {
-        if (arr[minIndex] > arr[i]) minIndex = i;
+int SelectMin(int array[], int length, int start_index) {
+    int min_index = start_index;
+    for (int i = start_index + 1; i < length; i++) {
+        if (array[min_index] > array[i]) min_index = i;
     }
-    return minIndex;
+    return min_index;
 }
 
+/**
+ 性能分析：
+ 所需进行记录移动的操作次数较少，最小值为0，最大值为3（n - 1）
+ 无论记录的初始序列如何，所需进行的关键字比较次数相同，均为n(n-1)/2。因此总的时间复杂度为O(n^2)
+ */
 
+///////// 选择类高级算法:归并排序
 
 /// test
 int main() {
@@ -116,10 +196,13 @@ int main() {
     int array[] = {50, 10, 3, 8, 9, 11};
 
 //    InsertSort(array, ARRAY_SIZE);
-    BinaryInsertSort(array, ARRAY_SIZE);
+//    BinaryInsertSort(array, ARRAY_SIZE);
     
+//    BubbleSortLowFirst(array, ARRAY_SIZE);
+//    BubbleSortHighFirst(array, ARRAY_SIZE);
     
-        //    sort_bubble(array, ARRAY_SIZE);
+    SelectSort(array, ARRAY_SIZE);
+    
     for (int i = 0; i < ARRAY_SIZE; i++) {
         printf("%d  ", array[i]);
     }

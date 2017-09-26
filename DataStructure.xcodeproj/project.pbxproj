@@ -18,7 +18,7 @@
 		276AA1F51F78CBD500D47235 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 276AA1F41F78CBD500D47235 /* main.cpp */; };
 		276AA2001F78CDB000D47235 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 276AA1FF1F78CDB000D47235 /* main.cpp */; };
 		279B86971F5803CD00EFC92F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 279B86961F5803CD00EFC92F /* main.cpp */; };
-		279B86A21F58042C00EFC92F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 279B86A11F58042C00EFC92F /* main.m */; };
+		279B86A21F58042C00EFC92F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 279B86A11F58042C00EFC92F /* main.cpp */; };
 		27CD94BF1B2E839000616C94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CD94BE1B2E839000616C94 /* main.cpp */; };
 		27CD94CA1B2E94B700616C94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CD94C91B2E94B700616C94 /* main.cpp */; };
 		27CD94D51B2E9C2E00616C94 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27CD94D41B2E9C2E00616C94 /* main.cpp */; };
@@ -206,7 +206,7 @@
 		279B86941F5803CD00EFC92F /* 快速排序QuickSort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "快速排序QuickSort"; sourceTree = BUILT_PRODUCTS_DIR; };
 		279B86961F5803CD00EFC92F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		279B869F1F58042C00EFC92F /* 希尔排序ShellSort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "希尔排序ShellSort"; sourceTree = BUILT_PRODUCTS_DIR; };
-		279B86A11F58042C00EFC92F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		279B86A11F58042C00EFC92F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		279B86AA1F58047800EFC92F /* 动态查找①_B树BST */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "动态查找①_B树BST"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CD94BC1B2E839000616C94 /* 栈Stack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "栈Stack"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CD94BE1B2E839000616C94 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -483,7 +483,7 @@
 		279B86A01F58042C00EFC92F /* 希尔排序ShellSort */ = {
 			isa = PBXGroup;
 			children = (
-				279B86A11F58042C00EFC92F /* main.m */,
+				279B86A11F58042C00EFC92F /* main.cpp */,
 			);
 			path = "希尔排序ShellSort";
 			sourceTree = "<group>";
@@ -1010,7 +1010,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279B86A21F58042C00EFC92F /* main.m in Sources */,
+				279B86A21F58042C00EFC92F /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1589,6 +1589,7 @@
 				276AA1D71F78C53F00D47235 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		276AA1E01F78C58100D47235 /* Build configuration list for PBXNativeTarget "动态查找④_键树" */ = {
 			isa = XCConfigurationList;
@@ -1597,6 +1598,7 @@
 				276AA1E21F78C58100D47235 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		276AA1EB1F78CBAE00D47235 /* Build configuration list for PBXNativeTarget "堆排序HeapSort" */ = {
 			isa = XCConfigurationList;
@@ -1605,6 +1607,7 @@
 				276AA1ED1F78CBAE00D47235 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		276AA1F61F78CBD500D47235 /* Build configuration list for PBXNativeTarget "归并排序MergingSort" */ = {
 			isa = XCConfigurationList;
@@ -1613,6 +1616,7 @@
 				276AA1F81F78CBD500D47235 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		276AA2011F78CDB000D47235 /* Build configuration list for PBXNativeTarget "哈希表HashTable" */ = {
 			isa = XCConfigurationList;
@@ -1621,6 +1625,7 @@
 				276AA2031F78CDB000D47235 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		279B869A1F5803CD00EFC92F /* Build configuration list for PBXNativeTarget "快速排序QuickSort" */ = {
 			isa = XCConfigurationList;
