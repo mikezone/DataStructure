@@ -188,11 +188,11 @@ int SelectMin(int array[], int length, int start_index) {
  无论记录的初始序列如何，所需进行的关键字比较次数相同，均为n(n-1)/2。因此总的时间复杂度为O(n^2)
  */
 
-///////// 选择类高级算法:归并排序
+///////// 选择类高级算法:堆排序
 
 /// test
 int main() {
-#define ARRAY_SIZE (6)
+    #define ARRAY_SIZE (6)
     int array[] = {50, 10, 3, 8, 9, 11};
 
 //    InsertSort(array, ARRAY_SIZE);
