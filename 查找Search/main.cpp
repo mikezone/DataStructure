@@ -9,19 +9,26 @@
 // 顺序查找
 //  传递参数:  数组、长度、要查找的元素
 // 返回参数:所在的索引
-int search_seq(int arr[], int length, int key) {
-    int i = length - 1;
-    for (; arr[i] != key && i >= 0; i--);
+int SequentialSearch(int array[], int arr_length, int key) {
+    int i = arr_length - 1;
+    for (; array[i] != key && i >= 0; i--);
     return i; // i < 0则没有找到
 }
 
+int SequentialSearch_Sentinel(int array[], int arr_length, int key) {
+    array[0] = key;
+    int i = arr_length;
+    for (; array[i] != key; i--);
+    return i;
+}
+
 // 折半查找 只适合于 有序数组
-int search_bin(int arr[], int length, int key) {
-    int low = 0, high = length;
-    while ( low <= high) {
+int BinarySearch(int array[], int arr_length, int key) {
+    int low = 0, high = arr_length - 1;
+    while (low <= high) {
         int mid = (low + high) / 2;
-        if ( key == arr[mid] ) return mid;
-        if ( key < arr[mid]) high = mid - 1;
+        if ( key == array[mid] ) return mid;
+        if ( key < array[mid]) high = mid - 1;
         else low = mid + 1;
     }
     return -1;
@@ -29,15 +36,36 @@ int search_bin(int arr[], int length, int key) {
 
 
 /// test
+//int main() {
+//#define ARRAY_SIZE (3)
+//    int array[] = {10, 20, 30};
+//    int index = SequentialSearch(array, ARRAY_SIZE, 90);
+//    if (index == -1) {
+//        printf("没有找到\n");
+//    } else {
+//        printf("找到了，位置是：%zd\n", index);
+//    }
+//
+//    printf("\n--------\n");
+//    index = BinarySearch(array, ARRAY_SIZE, 10);
+//    printf("%d", index);
+//}
+
 int main() {
-    int arr[] = {10, 20, 30};
-    int index = search_seq(arr, 3, 90);
-    printf("%d", index);
+#define ARRAY_SIZE (3)
+    int array[] = {NULL, 10, 20, 30};
+    int index = SequentialSearch_Sentinel(array, ARRAY_SIZE, 90);
+    if (index == 0) {
+        printf("没有找到\n");
+    } else {
+        printf("找到了，位置是：%zd\n", index);
+    }
     
     printf("\n--------\n");
-    index = search_bin(arr, 3, 10);
+    index = BinarySearch(array, ARRAY_SIZE, 10);
     printf("%d", index);
 }
+
 
 
 

@@ -159,7 +159,7 @@ void BubbleSortHighFirst(int array[], int length) {
  与冒泡的不同是，冒泡是在不断的比较和交换，而选择排序是在不断地比较并记录位置，一趟只进行一次交换
  */
 
-///  每趟的结果是找到未排序的集合中最小的, 要用到selectMin过程方法
+///  返回每趟排序中最小值的位置
 int SelectMin(int array[], int length, int start_index);
 
 void SelectSort(int array[], int length) {
@@ -173,7 +173,8 @@ void SelectSort(int array[], int length) {
     }
     
 }
-// selectMin的一种实现
+
+/// SelectMin的一种实现
 int SelectMin(int array[], int length, int start_index) {
     int min_index = start_index;
     for (int i = start_index + 1; i < length; i++) {

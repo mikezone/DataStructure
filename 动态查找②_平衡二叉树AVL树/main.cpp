@@ -65,7 +65,7 @@ void InOrderTraverse(AVLTree T, void (*visit)(ElemType)) {
 }
 
 void visit(ElemType elem) {
-    printf("%zd\n", elem);
+    printf("%zd ", elem);
 }
 
 
@@ -307,22 +307,23 @@ int main(int argc, const char * argv[]) {
     InOrderTraverse(root, visit);
     
     // 再插入
-    printf("===================\n");
+    printf("\n===================");
     InsertAVL(root, 45, grow_taller);
-    printf("插入 45 之后\n");
+    printf("\n插入 45 之后\n");
     InOrderTraverse(root, visit);
     
     InsertAVL(root, 12, grow_taller);
-    printf("插入 12 之后\n");
+    printf("\n插入 12 之后\n");
     InOrderTraverse(root, visit);
     
     InsertAVL(root, 24, grow_taller);
-    printf("插入 24 之后\n");
+    printf("\n插入 24 之后\n");
     InOrderTraverse(root, visit);
     
     InsertAVL(root, 90, grow_taller);
-    printf("插入 90 之后\n");
+    printf("\n插入 90 之后\n");
     InOrderTraverse(root, visit);
+    printf("\n===================\n");
     
     AVLTNode *node;
     ElemType search_array[] = {24, 0, 19};
@@ -335,6 +336,7 @@ int main(int argc, const char * argv[]) {
             printf("找到%zd\n", node->data);
         }
     }
+    printf("现在中序遍历为：");
     InOrderTraverse(root, visit);
     
     return 0;

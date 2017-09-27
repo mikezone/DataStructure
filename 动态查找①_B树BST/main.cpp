@@ -37,18 +37,6 @@ typedef struct BiTNode {
     struct BiTNode *lchild, *rchild;
 }BiTNode, *BiTree;
 
-// 先序遍历 递归算法
-Status PreOrderTraverse(BiTree T, Status (*visit)(TElemType)) {
-    
-    if (T) {
-        visit(T->data);
-        PreOrderTraverse(T->lchild, visit);
-        PreOrderTraverse(T->rchild, visit);
-        return OK;
-    }
-    return ERROR;
-}
-
 // 中序遍历 递归算法
 Status InOrderTraverse(BiTree T, Status (*visit)(TElemType)) {
     if (T) {
@@ -210,7 +198,7 @@ void test_BST_delete() {
 
 int main(int argc, const char * argv[]) {
 //    test_BST_search();
-//    test_BST_insert();
+    test_BST_insert();
 //    test_BST_delete();
     return 0;
 }
